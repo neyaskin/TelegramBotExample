@@ -5,6 +5,7 @@ API_TOKEN = 'Токен можно получить в ТГ у https://t.me/BotF
 bot = telebot.TeleBot(API_TOKEN)
 
 # Example 1 Отправка сообщения
+# message_handler - функция обрабатывает все сообщения пользователя
 @bot.message_handler(func=lambda message: True)
 def echo(message):
     bot.send_message(message.chat.id, message.text)
@@ -25,6 +26,7 @@ def echo(message):
 
 
 # Example 4 Бот погоды
+# message_handler - функция реагирует только на команды
 # @bot.message_handler(commands=['help', 'start'])
 # def welcome_msg(message):
 #     bot.send_message(message.chat.id, 'Напишите город, в котором хотите узнать погоду')
